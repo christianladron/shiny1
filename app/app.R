@@ -8,10 +8,7 @@ ui <- fluidPage(
 server <- function(input, output) {
 df <- parseTweets('tweets.json')
   
-  output$selected_var <- renderText({ 
-    input$textin
-  })
-  output$tweets <- renderTable({df$text})
+  output$tweets <- renderTable({df})
   
 }
 shinyApp(ui,server)
